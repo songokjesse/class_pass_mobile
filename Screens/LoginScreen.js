@@ -22,7 +22,7 @@ function FormTextField(){
         .then(response => {
             const { data: user } = axios.get("http//41.89.163.139/api/user", {
         headers: {
-          Authorization: `Bearer ${data.token}`,
+          Authorization: `Bearer ${response.data.token}`,
         },
       })
       console.log(user);
