@@ -21,7 +21,6 @@ function FormTextField() {
             try {
                 const user = await axios.get("http//41.89.163.139/classpass/api/user", {
                     headers: {
-                        Accept: 'application/json',
                         Authorization: `Bearer ${response.data.token}`,
                     },
                 });
