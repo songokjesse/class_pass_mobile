@@ -2,6 +2,7 @@ import { SafeAreaView, View, Button, Platform, StyleSheet } from "react-native";
 import axios from '../utils/axios';
 import { useState } from 'react';
 import FormTextField from "../components/FormTextField";
+import {loadUser, login} from "../services/AuthService";
 
 export default function () {
     const [email, setEmail] = useState('');
@@ -10,23 +11,14 @@ export default function () {
     const handleLogin = async () => {
         setErrors({});
         try {
-            const response = await axios.post('/login', {
+             await login({
                 email,
                 password,
-                device_name: `${Platform.OS} ${Platform.Version}`,
-            });
-            console.log('Login successful:', response.data);
-            try {
-                const user = await axios.get('/user', {
-                    headers: {
-                        Authorization: `Bearer ${response.data.token}`,
-                    },
-                });
-                console.log('User data:', user.data);
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-            }
+                device_name: `${Platform.OS} ${Platform.Version}`
+            })
 
+            const user = await loadUser();
+            console.log(user);
         } catch (error) {
             console.error('Login failed:', error.response?.data);
             if (error.response?.status === 422) {
