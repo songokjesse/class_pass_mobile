@@ -26,7 +26,7 @@ function FormTextField(){
             // Handle login error, e.g., display an error message
             console.error('Login failed:', error);
             if (error.response?.status === 422) {
-                setErrors(e.response.data.errors);
+                setErrors(error.response.data.errors);
               }
         });
     }
