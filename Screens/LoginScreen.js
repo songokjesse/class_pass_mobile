@@ -22,7 +22,7 @@ function FormTextField() {
             try {
                 const user = await axios.get('http://41.89.163.139/classpass/api/user', {
                     headers: {
-                      Authorization: `Bearer ${token}`,
+                      Authorization: `Bearer ${response.data.token}`,
                     },
                   });
                   console.log('User data:', user.data); 
