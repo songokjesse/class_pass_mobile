@@ -3,32 +3,64 @@ import { SafeAreaView, Text, TextInput, View, Button, Platform, useNavigation } 
 import axios from 'axios';
 import { useState } from 'react';
 
+// function FormTextField() {
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+//     const [errors, setErrors] = useState({});
+//     const handleLogin = () => {
+//         setErrors({});
+//         axios.post('http://41.89.163.139/classpass/api/login', {
+//             email: email,
+//             password: password,
+//             device_name: `${Platform.OS} ${Platform.Version}`,
+//         }, {
+//             headers: {
+//                 'Accept': 'application/json', // Example header
+//             }
+//         })
+//             .then(response => {
+//                 // Handle successful login, e.g., navigate to home screen
+//                 console.log('Login successful:', response.data);
+//             })
+//             .catch(error => {
+//                 // Handle login error, e.g., display an error message
+//                 console.error('Login failed:', error.response.data);
+//                 if (error.response?.status === 422) {
+//                     setErrors(error.response.data.errors);
+//                 }
+//             });
+//     }
 function FormTextField() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
-    const handleLogin = () => {
+    const navigation = useNavigation(); 
+
+    const handleLogin = async () => {
         setErrors({});
-        axios.post('http://41.89.163.139/classpass/api/login', {
-            email: email,
-            password: password,
-            device_name: `${Platform.OS} ${Platform.Version}`,
-        }, {
-            headers: {
-                'Accept': 'application/json', // Example header
-            }
-        })
-            .then(response => {
-                // Handle successful login, e.g., navigate to home screen
-                console.log('Login successful:', response.data);
-            })
-            .catch(error => {
-                // Handle login error, e.g., display an error message
-                console.error('Login failed:', error.response.data);
-                if (error.response?.status === 422) {
-                    setErrors(error.response.data.errors);
+        try {
+            const response = await axios.post('http://41.89.163.139/classpass/api/login', {
+                email: email,
+                password: password,
+                device_name: `${Platform.OS} ${Platform.Version}`,
+            }, {
+                headers: {
+                    'Accept': 'application/json',
                 }
             });
+
+            console.log('Login successful:', response.data);
+            navigation.navigate('Home'); // Navigate after successful login
+
+        } catch (error) {
+            console.error('Login failed:', error.response?.data);
+            if (error.response?.status === 422) {
+                setErrors(error.response.data.errors);
+            } else {
+                // Handle other errors (e.g., network issues)
+                console.error('Network or other error:', error); 
+            }
+        }
     }
     return (
         <View>
