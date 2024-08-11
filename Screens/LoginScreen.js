@@ -28,7 +28,7 @@ function FormTextField() {
                 // Handle successful login, e.g., navigate to home screen
                 console.log('Login successful:', response.data);
             })
-            .catch(error => {
+            .catch(async error => {
                 // Handle login error, e.g., display an error message
                 console.error('Login failed:', error.response.data);
                 if (error.response?.status === 422) {
