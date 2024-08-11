@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, TextInput, View, Button, Platform, useNavigation } from "react-native";
+import { SafeAreaView, Text, TextInput, View, Button, Platform } from "react-native";
 
 import axios from 'axios';
 import { useState } from 'react';
