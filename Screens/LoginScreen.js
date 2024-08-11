@@ -34,8 +34,6 @@ function FormTextField() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
-    const navigation = useNavigation(); 
-
     const handleLogin = async () => {
         setErrors({});
         try {
