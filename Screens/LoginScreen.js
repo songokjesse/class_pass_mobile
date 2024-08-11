@@ -7,8 +7,9 @@ import { useState } from 'react';
 function FormTextField(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
-
+    const [errors, setErrors] = useState({});
     const handleLogin = () => {
+        setErrors({});
         axios.post('http://41.89.163.139/classpass/api/login',  {
             email: email,
             password: password
@@ -24,6 +25,9 @@ function FormTextField(){
         .catch(error => {
             // Handle login error, e.g., display an error message
             console.error('Login failed:', error);
+            if (error.response?.status === 422) {
+                setErrors(e.response.data.errors);
+              }
         });
     }
     return (
@@ -46,6 +50,7 @@ function FormTextField(){
                 }}
                 value={email}
                 onChangeText={setEmail}
+                errors={errors.email}
             />
             <Text style={{
                 color: "#334155",
@@ -68,6 +73,7 @@ function FormTextField(){
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
+                errors={errors.password}
             />
             <Button title="Login" onPress={handleLogin} />
         </View>
