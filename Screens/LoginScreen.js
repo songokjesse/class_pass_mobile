@@ -1,41 +1,41 @@
 
-import {SafeAreaView, Text, TextInput, View, Button, Platform} from "react-native";
+import { SafeAreaView, Text, TextInput, View, Button, Platform } from "react-native";
 
 import axios from 'axios';
 import { useState } from 'react';
 
-function FormTextField(){
+function FormTextField() {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState(''); 
+    const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
     const handleLogin = async () => {
         setErrors({});
-        axios.post('http://41.89.163.139/classpass/api/login',  {
+        await axios.post('http://41.89.163.139/classpass/api/login', {
             email: email,
             password: password,
             device_name: `${Platform.OS} ${Platform.Version}`,
-          }, {
+        }, {
             headers: {
-              'Accept': 'application/json', // Example header
+                'Accept': 'application/json', // Example header
             }
-          })
-        .then(response => {
-            const { data: user } = axios.get("http//41.89.163.139/api/user", {
-                headers: {
-                     Authorization: `Bearer ${response.data.token}`,
-                },
-      })
-      console.log(user);
-            // Handle successful login, e.g., navigate to home screen
-            console.log('Login successful:', response.data);
         })
-        .catch(error => {
-            // Handle login error, e.g., display an error message
-            console.error('Login failed:', error.response.data);
-            if (error.response?.status === 422) {
-                setErrors(error.response.data.errors);
-              }
-        });
+            .then(response => {
+                const { data: user } = axios.get("http//41.89.163.139/api/user", {
+                    headers: {
+                        Authorization: `Bearer ${response.data.token}`,
+                    },
+                })
+                console.log(user);
+                // Handle successful login, e.g., navigate to home screen
+                console.log('Login successful:', response.data);
+            })
+            .catch(error => {
+                // Handle login error, e.g., display an error message
+                console.error('Login failed:', error.response.data);
+                if (error.response?.status === 422) {
+                    setErrors(error.response.data.errors);
+                }
+            });
     }
     return (
         <View>
@@ -45,7 +45,7 @@ function FormTextField(){
             }}>
                 Email Address
             </Text>
-            <TextInput 
+            <TextInput
                 style={{
                     backgroundColor: "#f1f5f9",
                     height: 40,
@@ -66,7 +66,7 @@ function FormTextField(){
             }}>
                 Password
             </Text>
-            <TextInput 
+            <TextInput
                 style={{
                     backgroundColor: "#f1f5f9",
                     height: 40,
@@ -87,9 +87,9 @@ function FormTextField(){
     )
 }
 export default function () {
-    return(
+    return (
         <SafeAreaView>
-            <View style={{padding: 20}}>
+            <View style={{ padding: 20 }}>
                 <FormTextField />
             </View>
         </SafeAreaView>
