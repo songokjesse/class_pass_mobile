@@ -24,7 +24,7 @@ function FormTextField(){
         })
         .catch(error => {
             // Handle login error, e.g., display an error message
-            console.error('Login failed:', error);
+            console.error('Login failed:', error.response.data);
             if (error.response?.status === 422) {
                 setErrors(error.response.data.errors);
               }
