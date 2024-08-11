@@ -8,7 +8,7 @@ function FormTextField(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
     const [errors, setErrors] = useState({});
-    const handleLogin = () => {
+    const handleLogin = async () => {
         setErrors({});
         axios.post('http://41.89.163.139/classpass/api/login',  {
             email: email,
@@ -21,9 +21,9 @@ function FormTextField(){
           })
         .then(response => {
             const { data: user } = axios.get("http//41.89.163.139/api/user", {
-        headers: {
-          Authorization: `Bearer ${response.data.token}`,
-        },
+                headers: {
+                     Authorization: `Bearer ${response.data.token}`,
+                },
       })
       console.log(user);
             // Handle successful login, e.g., navigate to home screen
