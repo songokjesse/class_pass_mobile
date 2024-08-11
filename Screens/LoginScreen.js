@@ -1,5 +1,5 @@
 
-import {SafeAreaView, Text, TextInput, View, Button} from "react-native";
+import {SafeAreaView, Text, TextInput, View, Button, Platform} from "react-native";
 
 import axios from 'axios';
 import { useState } from 'react';
@@ -12,7 +12,8 @@ function FormTextField(){
         setErrors({});
         axios.post('http://41.89.163.139/classpass/api/login',  {
             email: email,
-            password: password
+            password: password,
+            device_name: `${Platform.OS} ${Platform.Version}`,
           }, {
             headers: {
               'Accept': 'application/json', // Example header
