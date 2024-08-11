@@ -20,7 +20,7 @@ function FormTextField() {
         })
             .then(response => {
                 // Handle successful login, e.g., navigate to home screen
-                // console.log('Login successful:', response.data);
+                console.log('Login successful:', response.data);
             })
             .catch(error => {
                 // Handle login error, e.g., display an error message
