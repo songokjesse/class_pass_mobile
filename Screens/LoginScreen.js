@@ -62,7 +62,8 @@ function FormTextField(){
                     borderWidth: 1.6,
                     borderRadius: 4,
                     borderColor: "#cbd5e1",
-                    padding: 10
+                    padding: 10,
+                    marginBottom: 4
                 }}
                 value={password}
                 onChangeText={setPassword}
