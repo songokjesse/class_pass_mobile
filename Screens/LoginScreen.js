@@ -22,16 +22,17 @@ function FormTextField() {
                 // Handle successful login, e.g., navigate to home screen
                 console.log('Login successful:', response.data);
                 // Assuming you have a navigation object available
-                navigation.navigate('Home'); 
+                navigation.navigate('Home');
 
                 console.log('Login successful:', response.data);
             })
             .catch(error => {
                 // Handle login error, e.g., display an error message
-                console.error('Login failed:', error.response.data);
-                if (error.response?.status === 422) {
-                    setErrors(error.response.data.errors);
-                }
+                console.log(error)
+                // console.error('Login failed:', error.response.data);
+                // if (error.response?.status === 422) {
+                //     setErrors(error.response.data.errors);
+                // }
             });
     }
     return (
