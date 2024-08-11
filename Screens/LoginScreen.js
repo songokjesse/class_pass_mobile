@@ -7,9 +7,9 @@ function FormTextField() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
-    const handleLogin = async () => {
+    const handleLogin = () => {
         setErrors({});
-        await axios.post('http://41.89.163.139/classpass/api/login', {
+        axios.post('http://41.89.163.139/classpass/api/login', {
             email: email,
             password: password,
             device_name: `${Platform.OS} ${Platform.Version}`,
@@ -18,23 +18,16 @@ function FormTextField() {
                 'Accept': 'application/json', // Example header
             }
         })
-            .then(async response => {
-                 const { data: user } = await axios.get("http//41.89.163.139/api/user", {
-                    headers: {
-                        Authorization: `Bearer ${response.data.token}`,
-                    },
-                })
-                console.log(user);
+            .then(response => {
                 // Handle successful login, e.g., navigate to home screen
                 // console.log('Login successful:', response.data);
             })
-            .catch(async error => {
+            .catch(error => {
                 // Handle login error, e.g., display an error message
-                console.log(error)
-                // console.error('Login failed:', error.response.data);
-                // if (error.response?.status === 422) {
-                //     setErrors(error.response.data.errors);
-                // }
+                console.error('Login failed:', error.response.data);
+                if (error.response?.status === 422) {
+                    setErrors(error.response.data.errors);
+                }
             });
     }
     return (
