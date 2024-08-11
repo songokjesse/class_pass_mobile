@@ -1,4 +1,3 @@
-
 import { SafeAreaView, Text, TextInput, View, Button, Platform } from "react-native";
 
 import axios from 'axios';
@@ -19,8 +18,8 @@ function FormTextField() {
                 'Accept': 'application/json', // Example header
             }
         })
-            .then(response => {
-                const { data: user } = axios.get("http//41.89.163.139/api/user", {
+            .then(async response => {
+                const { data: user } = await axios.get("http//41.89.163.139/api/user", {
                     headers: {
                         Authorization: `Bearer ${response.data.token}`,
                     },
