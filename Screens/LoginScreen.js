@@ -18,14 +18,19 @@ function FormTextField() {
                     'Accept': 'application/json',
                 }
             });
-            const { data: user } = await axios.get("http//41.89.163.139/api/user", {
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: `Bearer ${response.data.token}`,
-                },
-            });
+            try {
+                const user = await axios.get("http//41.89.163.139/api/user", {
+                    headers: {
+                        Accept: 'application/json',
+                        Authorization: `Bearer ${response.data.token}`,
+                    },
+                });
+                console.log('User:', user);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                alert('Error fetching user data. Please try again.')
+            }
             console.log('Login successful:', response.data);
-            console.log('User:', user);
 
         } catch (error) {
             console.error('Login failed:', error.response?.data);
