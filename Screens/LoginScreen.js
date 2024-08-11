@@ -9,7 +9,7 @@ function FormTextField(){
     const [password, setPassword] = useState(''); 
 
     const handleLogin = () => {
-        axios.post('http://41.89.163.139/api/login',  {
+        axios.post('http://41.89.163.139/classpass/api/login',  {
             email: email,
             password: password
           }, {
