@@ -20,6 +20,12 @@ function FormTextField(){
             }
           })
         .then(response => {
+            const { data: user } = axios.get("http//41.89.163.139/api/user", {
+        headers: {
+          Authorization: `Bearer ${data.token}`,
+        },
+      })
+      console.log(user);
             // Handle successful login, e.g., navigate to home screen
             console.log('Login successful:', response.data);
         })
