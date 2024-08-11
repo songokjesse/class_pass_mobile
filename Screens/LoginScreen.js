@@ -24,9 +24,9 @@ function FormTextField() {
                         Authorization: `Bearer ${response.data.token}`,
                     },
                 })
-                console.log(data);
+                console.log(user);
                 // Handle successful login, e.g., navigate to home screen
-                console.log('Login successful:', response.data);
+                // console.log('Login successful:', response.data);
             })
             .catch(async error => {
                 // Handle login error, e.g., display an error message
