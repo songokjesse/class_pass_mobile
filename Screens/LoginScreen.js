@@ -21,6 +21,10 @@ function FormTextField() {
             .then(response => {
                 // Handle successful login, e.g., navigate to home screen
                 console.log('Login successful:', response.data);
+                // Assuming you have a navigation object available
+                navigation.navigate('Home'); 
+
+                console.log('Login successful:', response.data);
             })
             .catch(error => {
                 // Handle login error, e.g., display an error message
