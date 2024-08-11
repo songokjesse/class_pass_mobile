@@ -48,10 +48,7 @@ function FormTextField() {
                     'Accept': 'application/json',
                 }
             });
-
             console.log('Login successful:', response.data);
-            navigation.navigate('Home'); // Navigate after successful login
-
         } catch (error) {
             console.error('Login failed:', error.response?.data);
             if (error.response?.status === 422) {
