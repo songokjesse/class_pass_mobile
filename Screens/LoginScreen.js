@@ -1,35 +1,7 @@
 import { SafeAreaView, Text, TextInput, View, Button, Platform } from "react-native";
-
 import axios from 'axios';
 import { useState } from 'react';
 
-// function FormTextField() {
-//     const [email, setEmail] = useState('');
-//     const [password, setPassword] = useState('');
-//     const [errors, setErrors] = useState({});
-//     const handleLogin = () => {
-//         setErrors({});
-//         axios.post('http://41.89.163.139/classpass/api/login', {
-//             email: email,
-//             password: password,
-//             device_name: `${Platform.OS} ${Platform.Version}`,
-//         }, {
-//             headers: {
-//                 'Accept': 'application/json', // Example header
-//             }
-//         })
-//             .then(response => {
-//                 // Handle successful login, e.g., navigate to home screen
-//                 console.log('Login successful:', response.data);
-//             })
-//             .catch(error => {
-//                 // Handle login error, e.g., display an error message
-//                 console.error('Login failed:', error.response.data);
-//                 if (error.response?.status === 422) {
-//                     setErrors(error.response.data.errors);
-//                 }
-//             });
-//     }
 function FormTextField() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -46,14 +18,22 @@ function FormTextField() {
                     'Accept': 'application/json',
                 }
             });
+            const { data: user } = await axios.get("http//41.89.163.139/api/user", {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: `Bearer ${response.data.token}`,
+                },
+            });
             console.log('Login successful:', response.data);
+            console.log('User:', user);
+
         } catch (error) {
             console.error('Login failed:', error.response?.data);
             if (error.response?.status === 422) {
                 setErrors(error.response.data.errors);
             } else {
                 // Handle other errors (e.g., network issues)
-                console.error('Network or other error:', error); 
+                console.error('Network or other error:', error);
             }
         }
     }
