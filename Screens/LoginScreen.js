@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, TextInput, View, Button, Platform } from "react-native";
+import { SafeAreaView, Text, TextInput, View, Button, Platform, useNavigation } from "react-native";
 
 import axios from 'axios';
 import { useState } from 'react';
@@ -21,8 +21,9 @@ function FormTextField() {
             .then(response => {
                 // Handle successful login, e.g., navigate to home screen
                 console.log('Login successful:', response.data);
-                // Assuming you have a navigation object available
-                navigation.navigate('Home');
+                // import { SafeAreaView, Text, TextInput, View, Button, Platform, useNavigation } from "react-native";
+
+                useNavigation.navigate('Home');
 
                 console.log('Login successful:', response.data);
             })
