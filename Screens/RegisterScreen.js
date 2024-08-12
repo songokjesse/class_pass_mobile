@@ -1,20 +1,24 @@
 import { SafeAreaView, View, Button, Platform, StyleSheet } from "react-native";
 import { useState, useContext} from 'react';
 import FormTextField from "../components/FormTextField";
-import {loadUser, login} from "../services/AuthService";
+import {loadUser} from "../services/AuthService";
 import AuthContext from "../context/AuthContext";
 
-export default function ({navigation}) {
+export default function () {
     const {setUser} = useContext(AuthContext);
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [password_confirmation, setPasswordConfirmation] = useState('');
     const [errors, setErrors] = useState({});
-    const handleLogin = async () => {
+    const handleRegister = async () => {
         setErrors({});
         try {
-             await login({
+             await register({
+                 name,
                 email,
                 password,
+                 password_confirmation,
                 device_name: `${Platform.OS} ${Platform.Version}`
             })
 
@@ -35,6 +39,13 @@ export default function ({navigation}) {
         <SafeAreaView style={styles.wrapper}>
             <View style={styles.container}>
                 <FormTextField
+                    label="Full Name"
+                    value={name}
+                    onChangeText={text => setName(text)}
+                    keyboardType="full-name"
+                    errors={errors.name}
+                />
+                <FormTextField
                     label="Email Address"
                     value={email}
                     onChangeText={text => setEmail(text)}
@@ -48,10 +59,14 @@ export default function ({navigation}) {
                     secureTextEntry={true}
                     errors={errors.password}
                 />
-                <Button title="Login" onPress={handleLogin} />
-                <Button title="Create Account" onPress={() => {
-                    navigation.navigate("Register")
-                }} />
+                <FormTextField
+                    label="Password Confirmation"
+                    value={password_confirmation}
+                    onChangeText={text => setPasswordConfirmation(text)}
+                    secureTextEntry={true}
+                    errors={errors.password_confirmation}
+                />
+                <Button title="Login" onPress={handleRegister} />
 
             </View>
         </SafeAreaView>
