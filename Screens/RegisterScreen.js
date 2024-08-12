@@ -1,7 +1,7 @@
 import { SafeAreaView, View, Button, Platform, StyleSheet } from "react-native";
 import { useState, useContext} from 'react';
 import FormTextField from "../components/FormTextField";
-import {loadUser} from "../services/AuthService";
+import {loadUser, register} from "../services/AuthService";
 import AuthContext from "../context/AuthContext";
 
 export default function () {
@@ -11,7 +11,7 @@ export default function () {
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
     const [errors, setErrors] = useState({});
-    const handleRegister = async () => {
+    const handleRegister = async ({ navigation }) => {
         setErrors({});
         try {
              await register({

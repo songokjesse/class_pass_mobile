@@ -5,8 +5,8 @@ export async function login(credentials){
     const {data} = await  axios.post("/login", credentials);
     await setToken(data.token)
 }
-export async function register(credentials){
-    const {data} = await  axios.post("/register", credentials);
+export async function register(registerInfo){
+    const {data} = await  axios.post("/register", registerInfo);
     await setToken(data.token)
 }
 export async function loadUser(){

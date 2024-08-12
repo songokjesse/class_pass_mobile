@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c4a6503-2515-4c99-ae35-abd36c544aef" name="Changes" comment="Feature: Login and Authentication">
+    <list default="true" id="0c4a6503-2515-4c99-ae35-abd36c544aef" name="Changes" comment="Feature: Registration Refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screens/RegisterScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/RegisterScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/AuthService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +88,7 @@
       <workItem from="1723107886041" duration="4503000" />
       <workItem from="1723112767366" duration="2160000" />
       <workItem from="1723372314989" duration="7104000" />
-      <workItem from="1723442500824" duration="5503000" />
+      <workItem from="1723442500824" duration="7177000" />
     </task>
     <task id="LOCAL-00001" summary="Project Refactor">
       <option name="closed" value="true" />
@@ -113,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723450234779</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Feature: Registration Refactor">
+      <option name="closed" value="true" />
+      <created>1723450591927</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723450591927</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +131,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project Refactor" />
     <MESSAGE value="Feature: Login and Authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature: Login and Authentication" />
+    <MESSAGE value="Feature: Registration Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature: Registration Refactor" />
   </component>
 </project>
