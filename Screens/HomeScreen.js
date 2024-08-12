@@ -20,9 +20,11 @@ export default function () {
           style={styles.logoutButton}
         />
       </View>
+      <View>
+        <Text style={styles.text}>Click on Icon to Register Attendance </Text>
+      </View>
       <View style={styles.mid_container}>
         <Image source={logo} style={styles.image} />
-        {/*<Button title="Scan QR" onPress={() => console.log('Scan QR pressed')} />*/}
       </View>
     </SafeAreaView>
   );
@@ -45,13 +47,18 @@ const styles = StyleSheet.create({
     // Adjust button styles (optional)
   },
   mid_container: {
-    marginTop: 130,
+    marginTop: 90,
     alignItems: 'center',
     justifyContent: 'center', // Distribute image and button evenly
   },
   image: {
-    width: 300, // Adjust image width as needed
-    height: 300, // Adjust image height as needed
+    width: 250, // Adjust image width as needed
+    height: 250, // Adjust image height as needed
     resizeMode: 'contain', // Adjust image scaling as needed
+  },
+  text: {
+    fontSize: 18, // Adjust font size as needed
+    textAlign: 'center',
+    marginTop: 30
   },
 });

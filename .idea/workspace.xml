@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c4a6503-2515-4c99-ae35-abd36c544aef" name="Changes" comment="Feature: Registration Refactor">
-      <change afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="0c4a6503-2515-4c99-ae35-abd36c544aef" name="Changes" comment="Feature: Homepage Logo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screens/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +89,7 @@
       <workItem from="1723112767366" duration="2160000" />
       <workItem from="1723372314989" duration="7104000" />
       <workItem from="1723442500824" duration="7900000" />
-      <workItem from="1723461872972" duration="2151000" />
+      <workItem from="1723461872972" duration="3216000" />
     </task>
     <task id="LOCAL-00001" summary="Project Refactor">
       <option name="closed" value="true" />
@@ -136,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723457246319</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Feature: Homepage Logo">
+      <option name="closed" value="true" />
+      <created>1723464107332</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723464107332</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +149,7 @@
     <MESSAGE value="Project Refactor" />
     <MESSAGE value="Feature: Login and Authentication" />
     <MESSAGE value="Feature: Registration Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature: Registration Refactor" />
+    <MESSAGE value="Feature: Homepage Logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature: Homepage Logo" />
   </component>
 </project>
