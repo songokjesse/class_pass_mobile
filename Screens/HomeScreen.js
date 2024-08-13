@@ -1,15 +1,21 @@
-import {Text, SafeAreaView, Button, StyleSheet, View, Image} from "react-native";
+import {Text, SafeAreaView, Button, StyleSheet, View, Image, TouchableOpacity} from "react-native";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import { logout } from "../services/AuthService";
-import logo from '../assets/logo.png'; // Import image
+import logo from '../assets/logo.png';
+// import ScanAttendanceScreen from "./ScanAttendanceScreen"; // Import image
 
-export default function () {
+export default function ({navigation}) {
   const { user, setUser } = useContext(AuthContext);
   async function handleLogout() {
     await logout();
     setUser(null);
   }
+
+  function handleImagePress() {
+    navigation.navigate("RegisterAttendance")
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerRow}>
@@ -24,7 +30,9 @@ export default function () {
         <Text style={styles.text}>Click on Icon to Register Attendance </Text>
       </View>
       <View style={styles.mid_container}>
+        <TouchableOpacity onPress={handleImagePress}>
         <Image source={logo} style={styles.image} />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

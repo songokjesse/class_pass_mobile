@@ -17,10 +17,9 @@ export default function ({navigation}) {
                 password,
                 device_name: `${Platform.OS} ${Platform.Version}`
             })
-
             const user = await loadUser();
              setUser(user);
-            console.log(user);
+            // console.log(user);
         } catch (error) {
             console.error('Login failed:', error.response?.data);
             if (error.response?.status === 422) {

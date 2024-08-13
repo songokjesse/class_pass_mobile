@@ -7,6 +7,7 @@ import {loadUser} from "./services/AuthService";
 import {useState, useEffect} from "react";
 import SplashScreen from "./Screens/SplashScreen";
 import RegisterScreen from "./Screens/RegisterScreen";
+import ScanAttendanceScreen from "./Screens/ScanAttendanceScreen";
 
 const Stack = createNativeStackNavigator()
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
                   {user? (
                       <>
                           <Stack.Screen name='Home' component={HomeScreen}/>
+                          <Stack.Screen name='RegisterAttendance' component={ScanAttendanceScreen}/>
                       </>
                   ) : (
                       <>
