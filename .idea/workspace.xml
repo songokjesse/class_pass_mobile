@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c4a6503-2515-4c99-ae35-abd36c544aef" name="Changes" comment="Feature: Homepage Logo Refactor">
-      <change afterPath="$PROJECT_DIR$/Screens/ScanAttendanceScreen.js" afterDir="false" />
+    <list default="true" id="0c4a6503-2515-4c99-ae35-abd36c544aef" name="Changes" comment="Feature: Camera Module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screens/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/ScanAttendanceScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/ScanAttendanceScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +92,7 @@
       <workItem from="1723372314989" duration="7104000" />
       <workItem from="1723442500824" duration="7900000" />
       <workItem from="1723461872972" duration="5033000" />
-      <workItem from="1723530398786" duration="1875000" />
+      <workItem from="1723530398786" duration="9503000" />
     </task>
     <task id="LOCAL-00001" summary="Project Refactor">
       <option name="closed" value="true" />
@@ -151,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723465102965</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Feature: Camera Module">
+      <option name="closed" value="true" />
+      <created>1723532778872</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723532778872</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +170,8 @@
     <MESSAGE value="Feature: Registration Refactor" />
     <MESSAGE value="Feature: Homepage Logo" />
     <MESSAGE value="Feature: Homepage Logo Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature: Homepage Logo Refactor" />
+    <MESSAGE value="Feature: Camera Module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature: Camera Module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
