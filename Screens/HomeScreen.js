@@ -3,7 +3,6 @@ import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import { logout } from "../services/AuthService";
 import logo from '../assets/logo.png';
-// import ScanAttendanceScreen from "./ScanAttendanceScreen"; // Import image
 
 export default function ({navigation}) {
   const { user, setUser } = useContext(AuthContext);

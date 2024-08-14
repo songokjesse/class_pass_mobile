@@ -1,13 +1,15 @@
 
-import {Button, StyleSheet, View, Text} from "react-native";
+import {Button, StyleSheet, View, Text, Vibration, Alert} from "react-native";
 import {CameraView, useCameraPermissions} from "expo-camera";
-import {useEffect, useState} from "react";
+import {useContext, useState} from "react";
+import AuthContext  from "../context/AuthContext"; // Import the AuthContext
 
 export default function App(){
 
     const [permission, requestPermission] = useCameraPermissions();
-    const [scanned, setScanned] = useState(false);
+    const [scanned, setScanned] = useState(true);
     const [data, setData] = useState(null);
+    const { user } = useContext(AuthContext); // Get the user object from the AuthContext
 
     if (!permission) {
         // Camera permissions are still loading.
@@ -23,10 +25,28 @@ export default function App(){
             </View>
         );
     }
-    const onBarcodeScanned = ({ data }) => {
-        setScanned(true);
-        setData(data);
-    };
+    async function onBarcodeScanned({ data }) {
+        if(!scanned) return;
+        try {
+            setScanned(false);
+            setData(data);
+            console.log(data)
+            Alert.alert("Attendance", 'Attendance Captured Successfully')
+            // // Make a POST request to your API endpoint
+            // try {
+            //     const response = await axios.post('https://your-api-endpoint.com/qr-code-data', {
+            //         qrCodeData: data,
+            //         userId: user.id, // Include the user's ID in the request
+            //     });
+            //     console.log(response.data);
+            // } catch (error) {
+            //     console.error(error);
+            // }
+        } catch (e) {
+            setScanned(true);
+            console.log(e)
+        }
+    }
 
     return(
         <View style={styles.container}>

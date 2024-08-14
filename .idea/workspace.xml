@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c4a6503-2515-4c99-ae35-abd36c544aef" name="Changes" comment="Feature: Camera Module">
+    <list default="true" id="0c4a6503-2515-4c99-ae35-abd36c544aef" name="Changes" comment="Refactor: Camera Module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/HomeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screens/ScanAttendanceScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/ScanAttendanceScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,7 @@
       <workItem from="1723461872972" duration="5033000" />
       <workItem from="1723530398786" duration="14957000" />
       <workItem from="1723620335603" duration="127000" />
-      <workItem from="1723620480258" duration="6269000" />
+      <workItem from="1723620480258" duration="14327000" />
     </task>
     <task id="LOCAL-00001" summary="Project Refactor">
       <option name="closed" value="true" />
@@ -168,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723540366021</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactor: Camera Module">
+      <option name="closed" value="true" />
+      <created>1723627396107</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723627396107</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +188,8 @@
     <MESSAGE value="Feature: Homepage Logo" />
     <MESSAGE value="Feature: Homepage Logo Refactor" />
     <MESSAGE value="Feature: Camera Module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature: Camera Module" />
+    <MESSAGE value="Refactor: Camera Module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Camera Module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
