@@ -1,8 +1,9 @@
-import { SafeAreaView, View, Button, Platform, StyleSheet } from "react-native";
+import { SafeAreaView, View, Image, Button, Platform, StyleSheet } from "react-native";
 import { useState, useContext} from 'react';
 import FormTextField from "../components/FormTextField";
 import {loadUser, register} from "../services/AuthService";
 import AuthContext from "../context/AuthContext";
+import logo from '../assets/logo.png'; // Import image
 
 export default function () {
     const {setUser} = useContext(AuthContext);
@@ -37,9 +38,11 @@ export default function () {
     }
     return (
         <SafeAreaView style={styles.wrapper}>
+            <Image source={logo} style={styles.image} />  
             <View style={styles.container}>
                 <FormTextField
                     label="Full Name"
+                    placeholder="Foobar"
                     value={name}
                     onChangeText={text => setName(text)}
                     errors={errors.name}
@@ -73,6 +76,24 @@ export default function () {
 }
 
 const styles = StyleSheet.create({
-    wrapper: { backgroundColor: "#fff", flex: 1},
-    container: {padding: 20, rowGap:16}
+    wrapper: { 
+        margin: '3%',
+        backgroundColor: "#fff", 
+        flex: 1,
+    },
+    container: {
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        padding: 20, 
+        rowGap:16,
+    },
+    image: {
+        width: 80, // Adjust image width as needed
+        height: 80, // Adjust image height as needed
+        resizeMode: 'contain', // Adjust image scaling as needed
+        display: 'block',
+        // marginTop: 10,
+        marginLeft: 'auto',
+        marginRight: 'auto',  
+      },
 })
