@@ -8,16 +8,18 @@ import logo from '../assets/logo.png'; // Import image
 export default function () {
     const {setUser} = useContext(AuthContext);
     const [name, setName] = useState('');
+    const [admissionNumber, setAdmissionNumber] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
     const [errors, setErrors] = useState({});
-    const handleRegister = async ({ navigation }) => {
+    const handleRegister = async () => {
         setErrors({});
         try {
              await register({
                  name,
                 email,
+                 admission_number: admissionNumber,
                 password,
                  password_confirmation: passwordConfirmation,
                 device_name: `${Platform.OS} ${Platform.Version}`
@@ -27,7 +29,7 @@ export default function () {
              setUser(user);
             console.log(user);
         } catch (error) {
-            console.error('Login failed:', error.response?.data);
+            console.error('Registration failed:', error.response?.data);
             if (error.response?.status === 422) {
                 setErrors(error.response.data.errors);
             } else {
@@ -53,6 +55,12 @@ export default function () {
                     onChangeText={text => setEmail(text)}
                     keyboardType="email-address"
                     errors={errors.email}
+                />
+                <FormTextField
+                    label="Admission Number"
+                    value={admissionNumber}
+                    onChangeText={text => setAdmissionNumber(text)}
+                    errors={errors.admission_number}
                 />
                 <FormTextField
                     label="Password"
