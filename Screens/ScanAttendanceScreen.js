@@ -1,11 +1,13 @@
+
 import {Button, StyleSheet, View, Text} from "react-native";
 import {CameraView, useCameraPermissions} from "expo-camera";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export  default function (){
+export default function App(){
+
     const [permission, requestPermission] = useCameraPermissions();
-    const [scannedData, setScannedData] = useState(null);
-    // const [scannedData, setScannedData] = useState<string | null>null; // Explicitly type scannedData as string or null
+    const [scanned, setScanned] = useState(false);
+    const [data, setData] = useState(null);
 
     if (!permission) {
         // Camera permissions are still loading.
@@ -21,24 +23,29 @@ export  default function (){
             </View>
         );
     }
-    async function onBarCodeScanned({ data }) {
-        setScannedData(data);
-        console.log(data);
-    }
+    const onBarcodeScanned = ({ data }) => {
+        setScanned(true);
+        setData(data);
+    };
+
     return(
         <View style={styles.container}>
-        <CameraView
+            <CameraView
                 style={StyleSheet.absoluteFill}
                 facing="back"
                 barcodeScannerSettings={{
                     barcodeTypes: ["qr"],
                 }}
-                onBarCodeScanned={onBarCodeScanned}
+                onBarcodeScanned={onBarcodeScanned} // Ensure correct function reference
             />
             <View style={styles.border}>
                 {/* You can customize the border styles here */}
             </View>
-
+            {scanned && (
+                <Text>
+                    Scanned data: {data}
+                </Text>
+            )}
         </View>
     )
 }
@@ -61,11 +68,6 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    scannedDataText: {
-        position: 'absolute',
-        bottom: 20,
-        color: 'white',
     },
 })
 
