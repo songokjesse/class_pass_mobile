@@ -1,8 +1,9 @@
-import { SafeAreaView, View, Button, Platform, StyleSheet } from "react-native";
+import { SafeAreaView, View, Image, Button, Platform, StyleSheet } from "react-native";
 import { useState, useContext} from 'react';
 import FormTextField from "../components/FormTextField";
 import {loadUser, login} from "../services/AuthService";
 import AuthContext from "../context/AuthContext";
+import logo from '../assets/logo.png'; // Import image
 
 export default function ({navigation}) {
     const {setUser} = useContext(AuthContext);
@@ -33,8 +34,10 @@ export default function ({navigation}) {
     return (
         <SafeAreaView style={styles.wrapper}>
             <View style={styles.container}>
+            <Image source={logo} style={styles.image} />
                 <FormTextField
                     label="Email Address"
+                    placeholder="Enter your Email Address"
                     value={email}
                     onChangeText={text => setEmail(text)}
                     keyboardType="email-address"
@@ -42,6 +45,7 @@ export default function ({navigation}) {
                 />
                 <FormTextField
                     label="Password"
+                    placeholder="Enter password"
                     value={password}
                     onChangeText={text => setPassword(text)}
                     secureTextEntry={true}
@@ -58,6 +62,27 @@ export default function ({navigation}) {
 }
 
 const styles = StyleSheet.create({
-    wrapper: { backgroundColor: "#fff", flex: 1},
-    container: {padding: 20, rowGap:16}
+    wrapper: { 
+        margin: '3%',
+        backgroundColor: "white", 
+        flex: 1,
+        borderColor: 'black',
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderRadius: 20,
+    },
+    container: {
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        padding: 20, 
+        rowGap:16
+    },
+    image: {
+        width: 80, // Adjust image width as needed
+        height: 80, // Adjust image height as needed
+        resizeMode: 'contain', // Adjust image scaling as needed
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      },
 })
