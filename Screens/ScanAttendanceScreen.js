@@ -1,5 +1,6 @@
 import { Button, StyleSheet, View, Text, Alert } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
+import {useState} from "react";
 // import { useContext, useState } from "react";
 // import AuthContext from "../context/AuthContext"; // Import the AuthContext
 
