@@ -1,5 +1,6 @@
 import {
   SafeAreaView,
+  ScrollView,
   View,
   Image,
   Button,
@@ -46,18 +47,20 @@ export default function () {
     }
   };
   return (
+    <ScrollView>
     <SafeAreaView style={styles.wrapper}>
       <Image source={logo} style={styles.image} />
       <View style={styles.container}>
         <FormTextField
           label="Full Name"
-          placeholder="Foobar"
+          placeholder="Enter your FullName"
           value={name}
           onChangeText={(text) => setName(text)}
           errors={errors.name}
         />
         <FormTextField
           label="Email Address"
+          placeholder="Enter your Email Address"
           value={email}
           onChangeText={(text) => setEmail(text)}
           keyboardType="email-address"
@@ -65,12 +68,14 @@ export default function () {
         />
         <FormTextField
           label="Admission Number"
+          placeholder="Enter your Admission Number"
           value={admissionNumber}
           onChangeText={(text) => setAdmissionNumber(text)}
           errors={errors.admission_number}
         />
         <FormTextField
           label="Password"
+          placeholder="Enter your Password"
           value={password}
           onChangeText={(text) => setPassword(text)}
           secureTextEntry={true}
@@ -78,6 +83,7 @@ export default function () {
         />
         <FormTextField
           label="Password Confirmation"
+          placeholder="Confirm your Password"
           value={passwordConfirmation}
           onChangeText={(text) => setPasswordConfirmation(text)}
           secureTextEntry={true}
@@ -86,27 +92,35 @@ export default function () {
         <Button title="Create Account" onPress={handleRegister} />
       </View>
     </SafeAreaView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   wrapper: {
-    margin: "3%",
+    marginTop: '6%',
+    marginBottom: '5%',
+    marginLeft: '5%',
+    marginRight: '5%',
     backgroundColor: "#fff",
     flex: 1,
+    borderColor: 'black',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderRadius: 20,
   },
   container: {
     marginTop: "auto",
     marginBottom: "auto",
-    padding: 20,
+    padding: 35,
     rowGap: 16,
   },
   image: {
-    width: 80, // Adjust image width as needed
-    height: 80, // Adjust image height as needed
+    width: 125, // Adjust image width as needed
+    height: 125, // Adjust image height as needed
     resizeMode: "contain", // Adjust image scaling as needed
     display: "block",
-    // marginTop: 10,
+    marginTop: '10%',
     marginLeft: "auto",
     marginRight: "auto",
   },

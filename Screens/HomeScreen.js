@@ -46,6 +46,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between", // Align items at opposite ends
     alignItems: "center", // Align items vertically on the same baseline
     padding: 16, // Add some padding for aesthetics
+    borderColor: 'black',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+    marginTop: 12,
+    marginLeft: 5,
+    marginRight: 5,
+
   },
   welcomeText: {
     fontSize: 18, // Adjust font size as needed
@@ -62,6 +71,9 @@ const styles = StyleSheet.create({
     width: 250, // Adjust image width as needed
     height: 250, // Adjust image height as needed
     resizeMode: 'contain', // Adjust image scaling as needed
+    shadowColor: '#202020',
+    shadowOffset: {width: 0, height: 0},
+    shadowRadius: 5,
   },
   text: {
     fontSize: 18, // Adjust font size as needed
