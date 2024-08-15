@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "class_app_mobile",
-    "slug": "class_app_mobile",
+    "slug": "classpass",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,7 +18,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.songok.classpass"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -30,6 +35,12 @@
           "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "512a206b-bd46-4d3f-9699-ffb61f6c3e1b"
+      }
+    },
+    "owner": "songok"
   }
 }
