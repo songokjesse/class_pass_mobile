@@ -33,25 +33,24 @@ export default function App({navigation}) {
       // setData(data);
       // Make a POST request to your API endpoint
       try {
-          const response = await attendance({
+          await attendance({
               timetable_id: data,
               user_id: user.id, // Include the user's ID in the request
           });
-          console.log(response.data);
-        Alert.alert("Attendance", "Attendance Captured Successfully", [
+        Alert.alert("Attendance", "Attendance Submitted Successfully", [
           { text:"Ok", onPress: () => navigation.navigate("Home") }
         ]);
       } catch (error) {
-          console.error(error.response.data);
-      if (error.response?.status === 422) {
-        Alert.alert("Attendance Error", error.response.data.message, [
-          { text:"Ok", onPress: () =>  setScanned(true)}
-        ]);
-      } else {
-        // Handle other errors (e.g., network issues)
-        console.error('Network or other error:', error);
-        setScanned(true);
-      }
+        if (error.response?.status === 422) {
+          const errorMessage = error.response.data.message;
+          Alert.alert("Attendance Error", errorMessage, [
+            { text: "Ok", onPress: () => navigation.navigate("Home") },
+          ]);
+          setScanned(false);
+        } else {
+          console.error('Network or other error:', error);
+          setScanned(false);
+        }
       }
     } catch (e) {
       setScanned(true);
