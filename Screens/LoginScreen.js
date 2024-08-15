@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Image, Button, Platform, StyleSheet } from "react-native";
+import { SafeAreaView, ScrollView, View, Image, Button, Platform, StyleSheet } from "react-native";
 import { useState, useContext} from 'react';
 import FormTextField from "../components/FormTextField";
 import {loadUser, login} from "../services/AuthService";
@@ -32,6 +32,7 @@ export default function ({navigation}) {
         }
     }
     return (
+        <ScrollView>
         <SafeAreaView style={styles.wrapper}>
             <View style={styles.container}>
             <Image source={logo} style={styles.image} />
@@ -58,30 +59,38 @@ export default function ({navigation}) {
 
             </View>
         </SafeAreaView>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     wrapper: { 
-        margin: '3%',
+        marginTop: '15%',
+        marginBottom: '5%',
+        marginLeft: '5%',
+        marginRight: '5%',
         backgroundColor: "white", 
         flex: 1,
         borderColor: 'black',
         borderStyle: 'solid',
         borderWidth: 1,
         borderRadius: 20,
+        padding: 50,
+        // height: 'auto',
     },
     container: {
         marginTop: 'auto',
         marginBottom: 'auto',
-        padding: 20, 
-        rowGap:16
+        padding: 15, 
+        rowGap:16, 
     },
     image: {
-        width: 80, // Adjust image width as needed
-        height: 80, // Adjust image height as needed
+        width: 150, // Adjust image width as needed
+        height: 150, // Adjust image height as needed
         resizeMode: 'contain', // Adjust image scaling as needed
         display: 'block',
+        marginBottom: '5%',
+        marginTop: '2%',
         marginLeft: 'auto',
         marginRight: 'auto',
       },
