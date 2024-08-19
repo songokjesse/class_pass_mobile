@@ -1,13 +1,4 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:4228583259.
-<<<<<<< HEAD
-import {Text, SafeAreaView, View} from 'react-native';
-export default function () {
-  return (
-    <SafeAreaView>
-        <View>
-            <Text>Loading</Text>
-        </View>
-=======
+
 import {Image, Text, StyleSheet, SafeAreaView} from 'react-native';
 // import * as SplashScreen from 'expo-splash-screen';
 
@@ -19,7 +10,6 @@ export default function () {
         source={require('../assets/splash.png')} // Replace with your image path
         style={styles.image}
       />
->>>>>>> 0014db3 (adding and styling splashscreen)
     </SafeAreaView>
   );
 };
