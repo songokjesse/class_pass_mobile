@@ -3,9 +3,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "./Screens/LoginScreen";
 import HomeScreen from "./Screens/HomeScreen";
 import AuthContext from "./context/AuthContext";
+
 import { loadUser } from "./services/AuthService";
 import { useState, useEffect } from "react";
 import SplashScreen from "./Screens/SplashScreen";
+
 import RegisterScreen from "./Screens/RegisterScreen";
 import ScanAttendanceScreen from "./Screens/ScanAttendanceScreen";
 import ForgotPassword from "./Screens/ForgotPassword";

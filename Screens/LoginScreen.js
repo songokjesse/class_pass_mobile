@@ -56,9 +56,6 @@ export default function ({navigation}) {
                 <Button title="Create Account" onPress={() => {
                     navigation.navigate("Register")
                 }} />
-                <Button title="Forgot Password !" onPress={() => {
-                    navigation.navigate("ForgotPassword")
-                }} />
 
             </View>
         </SafeAreaView>
