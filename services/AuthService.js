@@ -5,6 +5,12 @@ export async function login(credentials){
     const {data} = await  axios.post("/login", credentials);
     await setToken(data.token)
 }
+
+export async function sendPasswordRestLink(email){
+    const {data} = await  axios.post("/forgot-password", {email})
+    return data.status
+}
+
 export async function register(registerInfo){
     const {data} = await  axios.post("/register", registerInfo);
     await setToken(data.token)
