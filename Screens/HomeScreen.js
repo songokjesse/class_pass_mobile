@@ -66,14 +66,16 @@ const styles = StyleSheet.create({
     marginTop: 90,
     alignItems: 'center',
     justifyContent: 'center', // Distribute image and button evenly
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 10, height: 12 }, // Shadow offset (x, y)
+    shadowOpacity: 1, // Shadow opacity
+    shadowRadius: 3.84, // Shadow radius
+    elevation: 5, // Elevation (for Android shadow)
   },
   image: {
     width: 250, // Adjust image width as needed
     height: 250, // Adjust image height as needed
     resizeMode: 'contain', // Adjust image scaling as needed
-    shadowColor: '#202020',
-    shadowOffset: {width: 0, height: 0},
-    shadowRadius: 5,
   },
   text: {
     fontSize: 18, // Adjust font size as needed
