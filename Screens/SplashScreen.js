@@ -1,9 +1,11 @@
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:4228583259.
-import {Text, SafeAreaView} from 'react-native';
+import {Text, SafeAreaView, View} from 'react-native';
 export default function () {
   return (
     <SafeAreaView>
-      <Text>Loading</Text>
+        <View>
+            <Text>Loading</Text>
+        </View>
     </SafeAreaView>
   );
 };
