@@ -1,4 +1,4 @@
-import {SafeAreaView, View, Text, StyleSheet, Image, Button} from "react-native";
+import {SafeAreaView,  ScrollView, View, Text, StyleSheet, Image, Button} from "react-native";
 import logo from "../assets/logo.png";
 import FormTextField from "../components/FormTextField";
 import {useState} from "react";
@@ -25,6 +25,7 @@ export default function (){
         }
     }
     return(
+        <ScrollView>
         <SafeAreaView style={styles.wrapper}>
             <Image source={logo} style={styles.image} />
             {resetStatus && <Text style={styles.resetStatus}>resetStatus</Text>}
@@ -41,12 +42,13 @@ export default function (){
                 <Button title="Email Password Reset Link" onPress={handleForgotPassword} />
             </View>
         </SafeAreaView>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     wrapper: {
-        marginTop: '6%',
+        marginTop: '32%',
         marginBottom: '5%',
         marginLeft: '5%',
         marginRight: '5%',
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
         resizeMode: "contain", // Adjust image scaling as needed
         display: "block",
         marginTop: '10%',
+        // marginBottom: '-30%',
         marginLeft: "auto",
         marginRight: "auto",
     },
