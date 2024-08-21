@@ -1,4 +1,4 @@
-import { Button, StyleSheet, View, TouchableOpacity, Text, Alert } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Alert } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import { useContext, useState } from "react";
 import AuthContext from "../context/AuthContext"; // Import the AuthContext
@@ -80,13 +80,24 @@ export default function App({navigation}) {
 
 const styles = StyleSheet.create({
   permission_container: {
-    padding: 20,
+    // display: 'flex',
+    // justifyContent: 'center',
+    height: 200,
+    paddingTop: 50,
+    paddingLeft: 20,
+    paddingRight: 20,
     rowGap: 16,
+    margin: 'auto',
+    borderColor: 'black',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderRadius: 5,
   },
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    
   },
   border: {
     position: "absolute",
