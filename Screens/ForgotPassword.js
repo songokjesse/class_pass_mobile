@@ -1,4 +1,4 @@
-import {SafeAreaView,  ScrollView, View, Text, StyleSheet, Image, Button} from "react-native";
+import {SafeAreaView,  ScrollView, TouchableOpacity,  View, Text, StyleSheet, Image, Button} from "react-native";
 import logo from "../assets/logo.png";
 import FormTextField from "../components/FormTextField";
 import {useState} from "react";
@@ -31,7 +31,7 @@ export default function (){
             {resetStatus && <Text style={styles.resetStatus}>resetStatus</Text>}
             <View style={styles.container}>
                 <Text>Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one. </Text>
-                <FormTextField
+                <FormTextField style={styles.inputStyles}
                     label="Email Address"
                     placeholder="Enter your Email Address"
                     value={email}
@@ -39,7 +39,10 @@ export default function (){
                     keyboardType="email-address"
                     errors={errors.email}
                 />
-                <Button title="Email Password Reset Link" onPress={handleForgotPassword} />
+                <TouchableOpacity style={styles.btnStyles} title="Email Password Reset Link" onPress={handleForgotPassword} >
+                <Text style={styles.txtStyles}>Email Password Reset Link</Text>
+
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
         </ScrollView>
@@ -78,5 +81,23 @@ const styles = StyleSheet.create({
     resetStatus: {
         marginBottom: 10,
         color: "green"
-    }
+    },
+    inputStyles: {
+        height: '48dp',
+        borderColor: "black",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderRadius: 5,
+        padding: 5,
+      },
+    btnStyles: {
+        color: 'white',
+        height: 40,
+        alignItems: 'center',
+        backgroundColor: '#067627',
+        padding: 10,
+      },
+    txtStyles: {
+        color: 'white',
+      }
 })

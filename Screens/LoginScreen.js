@@ -1,7 +1,9 @@
 import {
   SafeAreaView,
   ScrollView,
+  TouchableOpacity,
   View,
+  Text,
   Image,
   Button,
   Platform,
@@ -44,7 +46,7 @@ export default function ({ navigation }) {
       <SafeAreaView style={styles.wrapper}>
         <View style={styles.container}>
           <Image source={logo} style={styles.image} />
-          <FormTextField
+          <FormTextField style={styles.inputStyles}
             label="Email Address"
             placeholder="Enter your Email Address"
             value={email}
@@ -52,7 +54,7 @@ export default function ({ navigation }) {
             keyboardType="email-address"
             errors={errors.email}
           />
-          <FormTextField
+          <FormTextField style={styles.inputStyles}
             label="Password"
             placeholder="Enter password"
             value={password}
@@ -60,19 +62,26 @@ export default function ({ navigation }) {
             secureTextEntry={true}
             errors={errors.password}
           />
-          <Button title="Login" onPress={handleLogin} />
-          <Button
+          <TouchableOpacity style={styles.btnStyles} title="Login" onPress={handleLogin}>
+          <Text style={styles.txtStyles}>LOGIN</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.btnStyles}
             title="Create Account"
             onPress={() => {
               navigation.navigate("Register");
-            }}
-          />
-          <Button
+            }}>
+          <Text style={styles.txtStyles}>CREATE ACCOUNT</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.btnStyles}
             title="Forgot Password"
             onPress={() => {
               navigation.navigate("ForgotPassword");
-            }}
-          />
+            }}>
+            <Text style={styles.txtStyles}>FORGOT PASSWORD</Text>
+          </TouchableOpacity>
+
         </View>
       </SafeAreaView>
     </ScrollView>
@@ -110,4 +119,22 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
   },
+  inputStyles: {
+    height: '48dp',
+    borderColor: "black",
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 5,
+  },
+  btnStyles: {
+    color: 'white',
+    height: 40,
+    alignItems: 'center',
+    backgroundColor: '#067627',
+    padding: 10,
+  },
+  txtStyles: {
+    color: 'white',
+  }
 });
