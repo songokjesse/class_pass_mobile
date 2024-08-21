@@ -1,4 +1,4 @@
-import { Button, StyleSheet, View, Text, Alert } from "react-native";
+import { Button, StyleSheet, View, TouchableOpacity, Text, Alert } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import { useContext, useState } from "react";
 import AuthContext from "../context/AuthContext"; // Import the AuthContext
@@ -22,7 +22,9 @@ export default function App({navigation}) {
         <Text style={styles.message}>
           We need your permission to show the camera
         </Text>
-        <Button onPress={requestPermission} title="grant permission" />
+        <TouchableOpacity style={styles.btnStyles} onPress={requestPermission} title="grant permission" >
+          <Text style={styles.txtStyles}>GRANT PERMISSION</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -95,4 +97,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  btnStyles: {
+    color: 'white',
+    height: 40,
+    alignItems: 'center',
+    backgroundColor: '#067627',
+    padding: 10,
+  },
+  txtStyles: {
+    color: 'white',
+  }
 });

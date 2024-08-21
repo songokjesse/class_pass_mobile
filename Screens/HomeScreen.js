@@ -1,4 +1,4 @@
-import {Text, SafeAreaView, Button, StyleSheet, View, Image, TouchableOpacity} from "react-native";
+import {Text, SafeAreaView, StyleSheet, View, Image, TouchableOpacity} from "react-native";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import { logout } from "../services/AuthService";

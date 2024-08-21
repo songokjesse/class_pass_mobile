@@ -1,4 +1,4 @@
-import {SafeAreaView,  ScrollView, TouchableOpacity,  View, Text, StyleSheet, Image, Button} from "react-native";
+import {SafeAreaView,  ScrollView, TouchableOpacity,  View, Text, StyleSheet, Image} from "react-native";
 import logo from "../assets/logo.png";
 import FormTextField from "../components/FormTextField";
 import {useState} from "react";

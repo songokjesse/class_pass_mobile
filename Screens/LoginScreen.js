@@ -5,7 +5,6 @@ import {
   View,
   Text,
   Image,
-  Button,
   Platform,
   StyleSheet,
 } from "react-native";
