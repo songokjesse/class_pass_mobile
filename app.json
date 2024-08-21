@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "class_app_mobile",
+    "name": "classPass",
     "slug": "classpass",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,9 +19,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": [
-        "android.permission.CAMERA"
-      ],
+      "permissions": ["android.permission.CAMERA"],
       "package": "com.songok.classpass"
     },
     "web": {
@@ -36,8 +34,16 @@
       ],
       [
         "expo-build-properties",
-        { "android":
-          { "usesCleartextTraffic": true }
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": ["node_modules/@expo-google-fonts/inter/Inter_900Black.ttf"]
         }
       ]
     ],
