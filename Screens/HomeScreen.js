@@ -19,11 +19,12 @@ export default function ({navigation}) {
     <SafeAreaView style={styles.container}>
       <View style={styles.headerRow}>
         <Text style={styles.welcomeText}>Hi, {user.name}</Text>
-        <Button
+        <TouchableOpacity
+          style={styles.logoutStyles}
           title="Logout"
-          onPress={handleLogout}
-          style={styles.logoutButton}
-        />
+          onPress={handleLogout}>
+        <Text style={styles.txtStyles}>LOG OUT</Text>
+        </TouchableOpacity>
       </View>
       <View>
         <Text style={styles.text}>Click on Icon to Register Attendance </Text>
@@ -81,4 +82,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 30
   },
+  logoutStyles: {
+    color: 'white',
+    height: 40,
+    alignItems: 'center',
+    backgroundColor: '#067627',
+    padding: 10,
+  },
+  txtStyles: {
+    color: 'white',
+  }
+
 });

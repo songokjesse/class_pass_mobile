@@ -2,8 +2,9 @@ import {
   SafeAreaView,
   ScrollView,
   View,
+  Text,
   Image,
-  Button,
+  TouchableOpacity,
   Platform,
   StyleSheet,
 } from "react-native";
@@ -35,9 +36,9 @@ export default function () {
 
       const user = await loadUser();
       setUser(user);
-      console.log(user);
+      // console.log(user);
     } catch (error) {
-      console.error("Registration failed:", error.response?.data);
+      // console.error("Registration failed:", error.response?.data);
       if (error.response?.status === 422) {
         setErrors(error.response.data.errors);
       } else {
@@ -52,6 +53,7 @@ export default function () {
       <Image source={logo} style={styles.image} />
       <View style={styles.container}>
         <FormTextField
+          style={styles.inputStyles}
           label="Full Name"
           placeholder="Enter your FullName"
           value={name}
@@ -59,6 +61,7 @@ export default function () {
           errors={errors.name}
         />
         <FormTextField
+          style={styles.inputStyles}
           label="Email Address"
           placeholder="Enter your Email Address"
           value={email}
@@ -67,6 +70,7 @@ export default function () {
           errors={errors.email}
         />
         <FormTextField
+          style={styles.inputStyles}
           label="Admission Number"
           placeholder="Enter your Admission Number"
           value={admissionNumber}
@@ -74,6 +78,7 @@ export default function () {
           errors={errors.admission_number}
         />
         <FormTextField
+          style={styles.inputStyles}
           label="Password"
           placeholder="Enter your Password"
           value={password}
@@ -82,6 +87,7 @@ export default function () {
           errors={errors.password}
         />
         <FormTextField
+          style={styles.inputStyles}
           label="Password Confirmation"
           placeholder="Confirm your Password"
           value={passwordConfirmation}
@@ -89,7 +95,10 @@ export default function () {
           secureTextEntry={true}
           errors={errors.password_confirmation}
         />
-        <Button title="Create Account" onPress={handleRegister} />
+        <TouchableOpacity style={styles.btnStyles} title="Create Account" onPress={handleRegister} >
+        <Text style={styles.txtStyles}>CREATE ACCOUNT</Text>
+        </TouchableOpacity>
+
       </View>
     </SafeAreaView>
     </ScrollView>
@@ -124,4 +133,22 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
   },
+  inputStyles: {
+    height: '48dp',
+    borderColor: "black",
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 5,
+  },
+  btnStyles: {
+    color: 'white',
+    height: 40,
+    alignItems: 'center',
+    backgroundColor: '#067627',
+    padding: 10,
+  },
+  txtStyles: {
+    color: 'white',
+  }
 });
