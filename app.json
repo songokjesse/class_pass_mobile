@@ -33,14 +33,6 @@
         }
       ],
       [
-        "expo-build-properties",
-        {
-          "android": {
-            "usesCleartextTraffic": true
-          }
-        }
-      ],
-      [
         "expo-font",
         {
           "fonts": ["node_modules/@expo-google-fonts/inter/Inter_900Black.ttf"]

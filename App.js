@@ -32,6 +32,7 @@ export default function App() {
         async function runEffect() {
           try {
             const user = await loadUser();
+            console.log(user);
             setUser(user);
           } catch (e) {
             console.log("Failed to load user", e);
