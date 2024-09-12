@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     marginRight: "auto",
   },
   inputStyles: {
-    height: '48dp',
+    height: 50,
     borderColor: "black",
     borderStyle: "solid",
     borderWidth: 1,
@@ -143,12 +143,13 @@ const styles = StyleSheet.create({
   },
   btnStyles: {
     color: 'white',
-    height: 40,
+    height: 48,
     alignItems: 'center',
     backgroundColor: '#067627',
-    padding: 10,
+    padding: 13,
   },
   txtStyles: {
     color: 'white',
+    // alignItems: 'center'
   }
 });
